@@ -17,7 +17,7 @@ webpackConfig.output = {
 
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
-    title: 'REDUX',
+    title: 'Lab-31 REDUX',
   }),
   new DefinePlugin({
     API_URL: JSON.stringify(process.env.API_URL),

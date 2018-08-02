@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "eslint --fix . && jest --coverage",
-    "testWatch": "jest --coverage --watchAll",
-    "test-nolint": "jest --coverage",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "lint": "eslint --fix ."
+    "lint": "eslint --fix .",
+    "cypress:open": "cypress open"
   },
   "jest": {
     "moduleNameMapper": {

@@ -1,39 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import * as sectionActions from '../../action/section';
-import SectionForm from '../section-form/section-form';
-import Section from '../section/section';
+import * as categoryActions from '../../action/category';
+import CategoryForm from '../category-form/category-form';
+import CategoryItem from '../category-Item/category-item';
 
 class Landing extends React.Component {
   render() {
-    const { sections, sectionCreate } = this.props;
+    const { categories, categoryCreate } = this.props;
     return (
       <div>
-        <SectionForm onComplete={sectionCreate} />
+        <div className="create-category">
+        <CategoryForm onComplete={categoryCreate} />
+        </div>
+        <div className="budget-category">
         {
-          sections.map((currentSection, i) => <Section section={currentSection} key={i} />)
+          categories.map((currentCategory, i) => <CategoryItem category={currentCategory} key={i} />)
         }
+        </div>
       </div>
     );
   }
 }
 
 Landing.propTypes = {
-  sections: PropTypes.array,
-  sectionCreate: PropTypes.func,
+  categories: PropTypes.array,
+  categoryCreate: PropTypes.func,
 };
 
 // This is us grabbing the Redux store to make those props of this component
 const mapStateToProps = (store) => {
   return {
-    sections: store,
+    categories: store,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    sectionCreate: data => dispatch(sectionActions.create(data)),
+    categoryCreate: data => dispatch(categoryActions.create(data)),
     // dispatch({ type: 'SECTION_CREATE', payload: stuff})
   };
 };

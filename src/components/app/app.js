@@ -8,7 +8,7 @@ export default class App extends React.Component {
       <div className='app'>
         <BrowserRouter>
           <div>
-            <h1>WE MADE IT</h1>
+            <h1>budget categories with Redux</h1>
             <Route exact path='/' component={Landing} />
           </div>
         </BrowserRouter>
