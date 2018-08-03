@@ -20,7 +20,6 @@ class Category extends React.Component {
         <CategoryForm category={category} onComplete={categoryUpdate}/>
       </div>
     );
-    // TODO line 17, the category.budget is what makes the number display 0 next to name.
   }
 }
 
