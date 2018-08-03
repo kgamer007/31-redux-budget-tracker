@@ -14,8 +14,8 @@ export default class CategoryForm extends React.Component {
   }
 
   handleChange = (event) => {
-    const { value } = event.target;
-    this.setState({ name: value });
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   }
 
   handleSubmit = (event) => {
@@ -36,18 +36,18 @@ export default class CategoryForm extends React.Component {
         <input
           type="text"
           name="name"
-          placeholder="Type name here"
-          value={this.state.value}
+          placeholder="Type category name"
+          value={this.state.name}
           onChange={this.handleChange}
         />
-        <button type="submit">{buttonText}</button>
         <input
           type="number"
           name="budget"
           placeholder="amount"
           value={this.state.budget}
-          onChange={this.handleSubmit}
+          onChange={this.handleChange}
         />
+        <button type="submit">{buttonText}</button>
       </form>
     );
   }
