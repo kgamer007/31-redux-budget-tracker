@@ -10,7 +10,7 @@ const defaultState = {
 export default class ExpenseForm extends React.Component {
   constructor(props) {
     super(props); 
-    this.state = this.props.category || defaultState;
+    this.state = this.props.expense || defaultState;
   }
 
   handleChange = (event) => {
