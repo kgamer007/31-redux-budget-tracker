@@ -1,8 +1,10 @@
+import uuid from 'uuid/v4';
+
 const create = ({ name, budget }) => ({
   type: 'CATEGORY_CREATE',
   payload: {
     name,
-    id: Math.random(),
+    _id: uuid(),
     createdOn: new Date(),
     budget,
   },

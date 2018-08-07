@@ -12,3 +12,5 @@ app: is used to initiate any routes to the landing page.
 category-form: is used to create and update upon submit of a new entry. 
 category-item: A wrapper component of category-form.
 landing: is what builds the actual page. 
+expense-form: is a component to create expenses of the category. 
+expense-item: A wrapper component of expense-form.

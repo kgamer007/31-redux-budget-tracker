@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import App from './components/app/app';
-import Reducer from './reducer/category';
+import Reducer from './reducer/main';
 import './style/main.scss';
 
 // Setting up the Redux store here
