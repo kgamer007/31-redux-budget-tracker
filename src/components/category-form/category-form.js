@@ -29,18 +29,19 @@ export default class CategoryForm extends React.Component {
   render() {
     const buttonText = this.props.category ? 'Update' : 'Create';
     return (
-      <form
+      <form 
+        data-cy="category-form" 
         onSubmit={this.handleSubmit}
-        className="category-form"
+        className="categories"
       >
-        <input
+        <input 
           type="text"
           name="name"
           placeholder="Type category name"
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <input
+        <input 
           type="number"
           name="budget"
           placeholder="amount"

@@ -14,18 +14,18 @@ export default class ExpenseForm extends React.Component {
   }
 
   handleChange = (event) => {
+    event.preventDefault();
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const categoryId = this.props.category ? this.props.category.id : this.props.expense.categoryId;
+    const categoryId = this.props.category._id;
     this.props.onComplete({
       ...this.state,
       categoryId,
     });
-    this.setState(defaultState);
   }
 
   render() {
@@ -44,6 +44,14 @@ export default class ExpenseForm extends React.Component {
           name="name"
           placeholder="Enter New Expense Name"
           value={ this.state.name }
+          onChange={ this.handleChange }
+        />
+        <label htmlFor="price">{ formText }</label>
+        <input 
+          type="number"
+          name="price"
+          min="0"
+          value={ this.state.price }
           onChange={ this.handleChange }
         />
         <button type="submit"> {buttonText} </button>

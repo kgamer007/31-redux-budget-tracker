@@ -6,6 +6,11 @@ import CategoryForm from '../category-form/category-form';
 import CategoryItem from '../category-Item/category-item';
 
 class Landing extends React.Component {
+  componentDidMount(prevProps) {
+    console.log('prevProps', prevProps);
+    console.log('prevProps', this.prevProps);
+  }
+
   render() {
     const { categories, categoryCreate } = this.props;
     return (
@@ -14,8 +19,9 @@ class Landing extends React.Component {
         <CategoryForm onComplete={categoryCreate} />
         </div>
         <div className="budget-category">
-        {
-          categories.map((currentCategory, i) => <CategoryItem category={currentCategory} key={i} />)
+        {categories
+          ? categories.map(category => <CategoryItem category={category} key={category._id} />)
+          : undefined
         }
         </div>
       </div>
@@ -30,8 +36,10 @@ Landing.propTypes = {
 
 // This is us grabbing the Redux store to make those props of this component
 const mapStateToProps = (store) => {
+  console.log(store);
+  
   return {
-    categories: store,
+    categories: store.category,
   };
 };
 
