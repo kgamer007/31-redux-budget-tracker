@@ -17,7 +17,7 @@ class Expense extends React.Component {
     return (
       <div className="expense" data-cy="expense">
         <p>{expense.name}</p>
-        <button onClick={() => expenseRemove({ ...expense, categoryId: category._id })}>Delete</button>
+        <button data-cy="delete-button" onClick={() => expenseRemove({ ...expense, categoryId: category._id })}>Delete</button>
         <ExpenseForm
           expense={expense}
           onComplete={expenseUpdate}

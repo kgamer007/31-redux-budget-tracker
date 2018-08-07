@@ -6,10 +6,11 @@ describe('Testing budget tracker app', () => {
 
     cy.get('form[data-cy=category-form] input[type=text]')
       .type('Test Category 1');
+      {force:true}
     
     cy.get('form[data-cy=category-form] input[type=number]')
       .clear()
-      .type('100')
+      .type('1221')
     
     cy.get('form[data-cy=category-form]')
       .submit();
@@ -24,7 +25,7 @@ describe('Testing budget tracker app', () => {
 
     cy.get('form[data-cy=expense-form] input[type=number]')
       .clear()
-      .type('50');
+      .type('1234');
 
     cy.get('form[data-cy=expense-form]').submit();
 
@@ -33,6 +34,8 @@ describe('Testing budget tracker app', () => {
         expect(expense).to.have.length(1);
       })
 
-    cy.get('[data-cy=category-delete-button]').click()
+    cy.get('[data-cy=expense]').click()
+    
+    cy.get('button[data-cy=delete-button]').click()
   });
 });

@@ -8,7 +8,6 @@ export default (state = defaultState, { type, payload }) => {
 
   switch (type) {
     case 'CATEGORY_CREATE':
-    console.log(payload) 
       return { ...state, [payload.id]: [payload] };
     case 'CATEGORY_REMOVE':
       updatedState = { ...state };
